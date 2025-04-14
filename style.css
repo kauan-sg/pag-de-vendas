@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Container com posição relativa para alinhar elementos internos */
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* A imagem de fundo se adapta à tela */
+  .background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Botão com estilo fixo, ajustado por mídia */
+  .cta-button {
+    position: absolute;
+    background-color: rgba(1, 192, 99, 1);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* DESKTOP */
+  @media (min-width: 769px) {
+    .background-img {
+      content: url('fundo_pagdevendas.png');
+    }
+  
+    .cta-button {
+      top: 90%;
+      left: 85%;
+      width: 24%;
+      height: 11%;
+    }
+  }
+  
+  /* CELULAR */
+  @media (max-width: 768px) {
+    .background-img {
+      content: url('fundo_pag2.jpeg');
+      object-fit: contain;
+      background-color: black;
+    }
+  
+    .cta-button {
+      top: 78%; /* Ajuste conforme necessário */
+      left: 50%;
+      width: 60%;
+      height: 10%;
+      font-size: 1.2rem;
+    }
+  }
+  
