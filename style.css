@@ -7,6 +7,8 @@
   html, body {
     height: 100%;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
   
   /* Container com posição relativa para alinhar elementos internos */
@@ -16,11 +18,14 @@
     height: 100%;
   }
   
-  /* A imagem de fundo se adapta à tela */
+  /* Imagem de fundo */
   .background-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   
   /* Botão com estilo fixo, ajustado por mídia */
@@ -34,6 +39,7 @@
     cursor: pointer;
     font-size: 1.5rem;
     transform: translate(-50%, -50%);
+    z-index: 1; /* Coloca o botão acima da imagem */
   }
   
   /* DESKTOP */
@@ -52,10 +58,14 @@
   
   /* CELULAR */
   @media (max-width: 768px) {
+    /* Para o celular, ajuste da imagem de fundo */
     .background-img {
       content: url('fundo_pag2.jpeg');
-      object-fit: contain;
+      object-fit: cover; /* Ajusta a imagem para cobrir toda a tela */
       background-color: black;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   
     .cta-button {
